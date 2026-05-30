@@ -3,17 +3,17 @@
 function sum(a, b) {
   return a + b;
 }
-module.exports = sum;
+module.exports.sum = sum;
 
 function subtract(a, b) {
   return a - b;
 }
-module.exports = subtract;
+module.exports.subtract = subtract;
 
 function multiply(a, b) {
   return a * b;
 }
-module.exports = multiply;
+module.exports.multiply = multiply;
 
 function divide(a, b) {
     if (b === 0) {
@@ -21,4 +21,4 @@ function divide(a, b) {
   }
   return a / b;
 }
-module.exports = divide;
+module.exports.divide = divide;
