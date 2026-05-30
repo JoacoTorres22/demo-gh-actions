@@ -1,7 +1,4 @@
-const sum = require('./math.js');
-const subtract = require('./math.js');
-const multiply = require('./math.js');
-const divide = require('./math.js');
+const { sum, subtract, multiply, divide } = require('./math.js');
 
 
 test('Sumar 1 + 2 es igual a 3', () => {
