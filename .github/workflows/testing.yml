@@ -1,15 +1,15 @@
-name: Unit Testing CI
+name: CI/CD Pipeline
 
+# 1. Definir cuándo se ejecuta (al hacer push a main)
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
 
+# 2. Definir los trabajos
 jobs:
+  # TRABAJO 1: Pruebas (CI)
   run-tests:
-    runs-on: ubuntu-latest # El servidor donde correrá
-
+    runs-on: ubuntu-latest
     steps:
       - name: Descargar código del repo
         uses: actions/checkout@v4
@@ -24,3 +24,17 @@ jobs:
 
       - name: Ejecutar Pruebas
         run: npm test
+
+  # TRABAJO 2: Despliegue (CD)
+  deploy-production:
+    needs: run-tests 
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código validado
+        uses: actions/checkout@v4
+        
+      - name: Simular Despliegue a Servidor
+        run: |
+          echo "🚀 Preparando servidores de producción..."
+          echo "📦 Subiendo los archivos validados..."
+          echo "✅ ¡Despliegue completado con éxito! La app está en vivo."
