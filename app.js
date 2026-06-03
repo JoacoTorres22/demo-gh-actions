@@ -41,7 +41,7 @@ function iniciarCalculadora() {
           } else if (operacion === '/') {
             resultado = divide(num1, num2);
           } else {
-            console.log('\nError: Operación no válida. Debes usar +, -, * o /');
+            console.log('\nError: Operación no válida. Debe usar +, -, * o /');
             rl.close(); // Cerramos el programa si hay un error
             return;     // Detenemos la ejecución
           }
