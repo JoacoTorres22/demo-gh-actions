@@ -6,7 +6,7 @@ function sum(a, b) {
 module.exports.sum = sum;
 
 function subtract(a, b) {
-  return a - b;
+  return a + b;
 }
 module.exports.subtract = subtract;
 
